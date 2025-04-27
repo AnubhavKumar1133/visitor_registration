@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3366FF;
+  --secondary-color: #14B8A6;
+  --success-color: #22C55E;
+  --error-color: #EF4444;
+  --background-color: #F5F7FA;
+  --text-color: #1F2937;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visitor-item-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.visitor-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.visitor-item-exit {
+  opacity: 1;
+}
+
+.visitor-item-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.detail-expand-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.detail-expand-enter-active {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 300ms, opacity 300ms;
+}
+
+.detail-expand-exit {
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.detail-expand-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 300ms, opacity 300ms;
+}
