@@ -52,7 +52,6 @@ const VisitorForm = ({ onSubmit }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // For mobile number, only allow digits
     if (name === 'mobileNumber' && value !== '') {
       const digits = value.replace(/\D/g, '');
       setFormData({ ...formData, [name]: digits });
@@ -60,7 +59,6 @@ const VisitorForm = ({ onSubmit }) => {
       setFormData({ ...formData, [name]: value });
     }
     
-    // Clear error for this field if it exists
     if (errors[name]) {
       setErrors({ ...errors, [name]: null });
     }
@@ -73,7 +71,6 @@ const VisitorForm = ({ onSubmit }) => {
       onSubmit(formData);
       setFormSubmitted(true);
       
-      // Reset form after brief delay for animation
       setTimeout(() => {
         setFormData(initialFormData);
         setFormSubmitted(false);
